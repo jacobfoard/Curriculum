@@ -3,7 +3,7 @@
 
     Let's play paper rock scissors
 
-    Simulate 2 people play best of 7 (gotta win 4)
+    Simulate 2 people playing the best of 7 (gotta win 4)
         - show the results of each "game"
 
         i.e.
