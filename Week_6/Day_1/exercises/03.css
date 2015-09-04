@@ -1,0 +1,36 @@
+/* Display Styles
+
+Make the following markup and style changes:
+    
+    1 - make the main <h1> headline and <h2> headline sit on the same line together
+
+    2 - add 3 movies to the Nerdy Movies list, and then hide only "Star Wars"
+
+    3 - make the first paragraph within the div element display as a block
+
+    4 - append a headline tag (any level besides h1) to the end of the paragraphs in the first div element, and make it sit on same line as text from last paragraph
+
+    5 - make all of the list items in the ordered list sit on the same row/line
+
+ */
+
+
+.headline, .sub-headline{
+	display: inline;
+}
+
+.paragraph1 {
+	display: block;
+}
+
+.hidden{
+    visibility:hidden;
+}
+
+.ordered-list li{
+	display: inline;
+}
+
+.paragraph3, .paragraph-div h2{
+	display: inline-block;
+}

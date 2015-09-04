@@ -11,8 +11,13 @@
                 // display all numbers that are less zero
 
                 // code goes here ...
-
-
+        
+                foreach($intArray as $array){
+                    if($array < 0){
+                        echo $array . "</br>";
+                    }
+                    
+                }
 
 
             ?>

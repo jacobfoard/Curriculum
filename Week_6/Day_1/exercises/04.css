@@ -1,0 +1,77 @@
+/* Positioning Styles
+
+Make the following markup and style changes:
+    
+    1 - use the 'float' attribute to make the first 2 headlines share a line; give the h1 headline a width of 66% and the sub-headline a width of 33%
+
+    2 - use CSS to make the height of the page 2000px; then append a <div> tag to the end of the body to create a 20px by 20px box with a background color of purple; position it so that when you scroll down, it stays in the top right corner of the page
+
+    3 - in the first <div> tag with the 3 paragraphs and headline inside, use the 'float' attribute again to create a grid with 4 equal-width items: the first 2 paragraphs should sit on the first row, with the third paragraph and headline on the second row; give the paragraphs background colors of red, yellow, and green, respectively, and then give the headline a background color of purple
+
+    4 - append another new <div> element after the one created in step 2; make this div full-width, and give it a height of 500px; make the background color purple; add a child div with dimensions 20px by 20px, and using positioning, make the child div sit in the bottom right corner of the parent div element
+
+    5 - use only positioning to shift the last item in the ordered list up 4px and right 8px
+
+ */
+
+.headline{
+	float: left;
+	width: 66%;
+}
+
+.sub-headline{
+	float: right;
+	width: 33%;
+}
+
+body{
+	max-height: 2000px;
+}
+
+.appended-div{
+	position: fixed;
+	top: 0;
+	right: 0;
+	width: 20px;
+	height: 20px;
+	background-color: purple;
+}
+
+.paragraph-div p, .paragraph-div h2{
+	float: left;
+	height: 400px;
+	width: 50%;
+}
+
+.paragraph1{
+	background-color: red;
+}
+.paragraph2{
+	background-color: yellow;
+}
+.paragraph3{
+	background-color: green;
+}
+.paragraph-div h2{
+	background-color: purple;
+}
+
+.parent{
+	width: 100%;
+	height: 500px;
+	background-color: purple;
+	position: relative;
+}
+.child{
+	height: 20px;
+	width: 20px;
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	background-color: orange;
+}
+.adjust{
+	position: relative;
+	top: -4px;
+	left: 8px;
+}

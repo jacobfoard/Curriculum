@@ -6,9 +6,9 @@
         <p>
           <?php
           	// The below code doesn't work... figure out why
-            $var = "What's up!"
+            $var = "What's up!";
 
-            echo $var
+            echo $var;
           ?>
         </p>
 	</body>

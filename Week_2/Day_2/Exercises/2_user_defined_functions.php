@@ -15,6 +15,13 @@
         // Create a function to clean the name and 
         // print out the person's name and their "score"
 
+        function score($name){
+            $name = ucwords(strtolower(trim($name)));
+            $explodedNames = explode(" ", $name);
+            $score = (stripos($name, "a") * strlen($explodedNames[count($explodedNames) -1])) / str_word_count($name);
+            echo "$name = $score </br>";
+
+        }
 
         $names = [
             'JASON hunter',
@@ -23,10 +30,13 @@
         ];
 
         // Add a couple extra names to the $names array
-
-
+        array_push($names, "  Bob ArK");
+        array_push($names, "JAcoB foArD");
+        sort($names);
         // loop through our names and call our function
-
+        foreach($names as $name){
+            echo score($name);
+        }
 
         ?>
 

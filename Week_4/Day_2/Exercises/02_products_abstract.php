@@ -4,7 +4,7 @@
   </head>
   <body>
     <p>
-    <?
+    <?php
         /**
          * OVERVIEW:
          * So, our boss gave us a call and hated the fact that 2 pieces of clothing had such
@@ -84,7 +84,71 @@
         ///////////////////////////
         // Put your code here!
         ///////////////////////////
+        
+        interface Describable {
+          public function provideDescription(); 
+        }
+        
+        abstract class Product implements Describable{
+          protected $name;
+          protected $price;
+          protected $brand;
+
+          public function __construct($name, $brand, $price){
+            $this->name = $name;
+            $this->brand = $brand;
+            $this->price = $price;
+          }
+          
+          abstract function provideDescriptionForProductType();
+          
+          public function provideDescription(){
+            return $this->provideDescriptionForProductType();
+          }
+        }
+        
+        class Television extends Product {
+          protected $displayType;
+          protected $size;
+          
+          public function __construct($name, $brand, $price, $displayType, $size){
+            parent::__construct($name, $brand, $price);
+            $this->displayType = $displayType;
+            $this->size = $size;
+          }
+          
+          public function provideDescriptionForProductType(){
+            return "This is a " . $this->size . " " . $this->brand . " " . $this->displayType . " Television";
+          }
+        }
+        
+        class Clothing extends Product {
+          protected $size;
+          protected $type;
+          protected $color;
+          protected $gender;
+          
+          public function __construct($name, $brand, $price, $type, $size, $color, $gender){
+            parent::__construct($name, $brand, $price);
+            $this->size = $size;
+            $this->type = $type;
+            $this->color = $color;
+            $this->gender = $gender;
+          }
+          
+          public function provideDescriptionForProductType(){
+            return "This is an article of clothing. It is a " . $this->brand . " " . $this->color . " " . $this->gender . " " . $this->type . " of size " . $this->size .  " it costs " . $this->price; 
+          }
+        }
+        
+        $buttonDownShirt = new Clothing("Button Down Shirt","J Peterman", 29.88, "shirt", "medium", "Eye-piercingly bright red", "Male");
+        $kramericaTV = new Television("Giant TV", "Kramerica", 3900.90, "LED", "100in");
+        
+        echo $buttonDownShirt->provideDescription();
+        echo "</br>";
+        echo $kramericaTV->provideDescription();
         ?>
+        
     </p>
   </body>
 </html>

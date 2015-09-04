@@ -40,6 +40,68 @@
     ///////////////////////////
     // Put your code here!
     ///////////////////////////
+    //Creates a living thing
+    class LivingThing {
+        
+        protected $name;    //Living Thing Name
+        protected $health; //Living Thing Health
+        public function isAlive() { //Function to evaluate Living Thing health, returns false if health is below zero
+            if($this->health > 0){ 
+            return true;   
+            }
+            else{
+                return false;
+            }
+        }
+        function __construct($name, $health){
+            $this->name = $name;
+            $this->health = $health;
+        }
+        public function getName() { //Getter for Living Thing Name
+            return $this->name;
+        }
+        public function getHealth() { //Getter for Living Thing Health
+            return $this->health;
+        }
+        public function setHealth($num){ //Setter for Living Thing Health
+            $this->health = $num;
+        }
+    }
+    
+    class Hero extends LivingThing { //Hero Class
+        public function attack($monster){ //Attacks living thing, generating a random number for damage taken and delt to and by the hero
+            $heroDamage = mt_rand(0,10);
+            $heroHealth = ($this->getHealth() - $heroDamage); 
+            $this->setHealth($heroHealth);
+            $monsterDamage = mt_rand(6,10);
+            $monsterHealth = ($monster->getHealth() - $monsterDamage);
+            $monster->setHealth($monsterHealth);
+            echo $this->getName() . " dealt $monsterDamage damage to " . $monster->getName() . " and took $heroDamage damage </br>";
+            echo $this->getName() . " has " . $this->getHealth() . " health </br>";
+            echo $monster->getName() . " has " . $monster->getHealth() . " health </br>";
+            if(!$monster->isAlive()){
+                echo $monster->getName() . " is dead! </br>"; //Echos that the living thing is dead
+            }
+        
+        }
+        public function fight($monsters){ //Attacks every living thing in an array
+            if($this->isAlive()){
+                foreach($monsters as $monster){
+                    while($monster->isAlive() && $this->isAlive()){
+                        $this->attack($monster);
+                    }
+                }
+            }
+        }
+    }
+    
+
+    $rat = new LivingThing("Rat", 5);
+    $goblin = new LivingThing("Goblin", 30);
+    $ogre = new LivingThing("Ogre", 80);
+    $hero = new Hero("Batman", 100);
+    
+    $monsters = array($rat, $goblin, $ogre);
 
 
     echo "<h3>A hero emerges!</h3>";

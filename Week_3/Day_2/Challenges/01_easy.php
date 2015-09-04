@@ -19,6 +19,25 @@
              $inputs = array(
                array('numbers' => range(0, 100))
              );
+            
+            foreach($inputs as $arrayNum){
+                foreach($arrayNum as $numsArray){
+                    foreach($numsArray as $finalArray){
+                        if((($finalArray % 3) == 0) and (($finalArray % 5) == 0)){
+                            echo $finalArray . " FizzBuzz </br>";
+                        }
+                        elseif(($finalArray % 3) == 0){
+                            echo $finalArray . " Fizz </br>";
+                        }
+                        elseif(($finalArray % 5) == 0){
+                            echo $finalArray . " Buzz </br>";
+                        }
+                        else{
+                            echo $finalArray . "</br>";
+                        }
+                    }
+                }
+            }
 
         ?>
 

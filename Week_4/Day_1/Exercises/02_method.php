@@ -20,7 +20,36 @@
     ///////////////////////////
     // Put your code here!
     ///////////////////////////
+    
+    class LivingThing {
+        
+        public $name;
+        public $health;
+        public function isAlive() {
+            if($this->health > 0){
+            return true;   
+            }
+            else{
+                return false;
+            }
+        }    
+    }
 
+    $rat = new LivingThing();
+    $rat->name = "Rat";
+    $rat->health = -5;
+    
+    $goblin = new LivingThing();
+    $goblin->name = "Goblin";
+    $goblin->health = 30;
+    
+    $ogre = new LivingThing();
+    $ogre->name = "Ogre";
+    $ogre->health = 80;
+    
+    $monsters = array($rat, $goblin, $ogre);
+    
+    var_dump($ogre);
 
     echo "<h3>Are the monsters alive?</h3>";
 

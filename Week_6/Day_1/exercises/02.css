@@ -1,0 +1,51 @@
+/* Visual Styles
+
+Make the following markup and style changes:
+    
+    1 - add a class to all of the top level children of the main <body> tag (*choose whatever you want)
+
+    2 - make the headline text uppercase, aligned to the right, italic, and using the font-family Helvetica
+
+    3 - give the subheadline a background-color of green, text color of white, a 2px grooved white border, and a border radius of at least 2px
+
+    4 - for the paragraphs in the first div, add a unique class to each paragraph; then center the first 2 paragraphs and make the last one justified
+
+    5 - for the unordered list, make the leading dot/circle a hollow circle and create a space of 5px padding between the circle and text
+
+ */
+
+.headline{
+	text-transform: uppercase;
+	text-align: right;
+	font-style: italic;
+	font-family: Helvetica;
+}
+
+.sub-headline{
+	background-color: green;
+	color: white;
+	border-style: groove;
+	border-width: 2px;
+	border-color: white;
+	border-radius: 2px;
+}
+
+.paragraph1{
+	text-align: center;
+}
+
+.paragraph2{
+	text-align: center;
+}
+
+.paragraph3{
+	text-align: justify;
+}
+
+.unordered-list{
+	list-style-type: circle;
+}
+
+.unordered-list li{
+	padding: 5px;
+}

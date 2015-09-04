@@ -18,6 +18,10 @@
             "Rasmus Lerdorf" // creator of php
         ];
         
+        unset($teachers[1]);
+        unset($teachers[3]);
+        unset($teachers[5]);
+
         print_r($teachers);
         
       ?>

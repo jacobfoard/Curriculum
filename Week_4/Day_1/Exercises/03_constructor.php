@@ -40,6 +40,32 @@
     // Put your code here!
     ///////////////////////////
 
+    class LivingThing {
+        
+        public $name;
+        public $health;
+        public function isAlive() {
+            if($this->health > 0){
+            return true;   
+            }
+            else{
+                return false;
+            }
+        }
+     
+        function __construct($name, $health){
+            $this->name = $name;
+            $this->health = $health;
+        }
+    }
+
+    $rat = new LivingThing("Rat", 5);
+    $goblin = new LivingThing("Goblin", 30);
+    $ogre = new LivingThing("Ogre", 80);
+    
+    var_dump($rat);
+    
+    $monsters = array($rat, $goblin, $ogre);
 
     echo "<h3>Creating monsters with a constructor</h3>";
 

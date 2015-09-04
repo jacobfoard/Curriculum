@@ -37,7 +37,27 @@
     // Put your code here!
     ///////////////////////////
 
+    class LivingThing {
+        
+        public $name;
+        public $health;
+        
+    }
 
+    $rat = new LivingThing();
+    $rat->name = "Rat";
+    $rat->health = 5;
+    
+    $goblin = new LivingThing();
+    $goblin->name = "Goblin";
+    $goblin->health = 30;
+    
+    $ogre = new LivingThing();
+    $ogre->name = "Ogre";
+    $ogre->health = 80;
+    
+    $monsters = array($rat, $goblin, $ogre);
+    
     echo "<h3>Monsters!</h3>";
 
     foreach ($monsters as $monster) {
